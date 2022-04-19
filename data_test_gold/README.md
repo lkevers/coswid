@@ -4,7 +4,8 @@ These data are related to the article "CoSwID, a Code Switching Identification M
 
 ## The UDHR data
 
-Original UDHR data is in the Public Domain. They are available on the NLTK version (”udhr2” corpus) available on https://www.nltk.org/nltk_data/
+Original UDHR data is in the Public Domain. They are available on the NLTK version (”udhr2” corpus) available on https://www.nltk.org/nltk_data/.
+
 These modified corpora are released under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
 UDHR-paragraph contains 16,095 tokens spread over 531 paragraphs, a switch of language occurring at each paragraph break.
