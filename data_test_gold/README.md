@@ -1,6 +1,6 @@
 # CoSwID - Code Switching Identification : Test & Gold standard Data.
 
-These data are related to the article "CoSwID, a Code Switching Identification Method Suitable for Under-Ressourced Languages", by Laurent Kevers (University of Corsica).
+These data are related to the article "CoSwID, a Code Switching Identification Method Suitable for Under-Ressourced Languages", presented at the [SIGUL Workshop](https://sigul-2022.ilc.cnr.it/) ([LREC2022](https://lrec2022.lrec-conf.org/en/)) by [Laurent Kevers](https://orcid.org/0000-0001-5058-6706) (University of Corsica).
 
 ## The UDHR data
 
