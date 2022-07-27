@@ -56,7 +56,7 @@ import operator
 import socket
 
 #
-# INSTALL : Specify where the LDIG folder is located
+# INSTALL(1) : Please specify below where the LDIG folder is located
 #
 sys.path.append('../../ldig-python3')
 import ldig
@@ -384,21 +384,21 @@ def voteForAmbigousLg (token, detectedLg, bestGlobLg) :
 
 # --- default parameters ---
 
-# INSTALL : Insert your models.
+# INSTALL(2): Insert your models.
 modelList={ 
-            "MODEL1" : "/home/lkevers/Documents/BDLC/laurent/articles-rapports/2022__CoSwID/models/all_9lgs_VERIF/",
-            "MODEL2" : "/home/lkevers/Documents/BDLC/laurent/articles-rapports/2022__CoSwID/models/all_9lgs_FILTRE/",
+            "FILTER2" : "/<YOUR_WORKING_DIRECTORY>/CoSwID/models/filter2/",
           }
 
 lgList={ 
-         "MODEL1" : ["cos","deu","eng","fra","ita","nld","por","ron","spa"],
-         "MODEL2" : ["cos","deu","eng","fra","ita","nld","por","ron","spa"],
+         "FILTER2" : ["cos","deu","eng","fra","ita","nld","por","ron","spa"],
        }
 
 toShortLgCode={"bul":"bg","ces":"cs","cos":"co","dan":"da","deu":"de","ell":"el","eng":"en","fin":"fi","fra":"fr","hun":"hu","ita":"it","lit":"lt","nld":"nl","pol":"pl","por":"pt","ron":"ro","spa":"es","swe":"sv"}
 toLongLgCode={"bg":"bul","cs":"ces","co":"cos","da":"dan","de":"deu","el":"ell","en":"eng","fi":"fin","fr":"fra","hu":"hun","it":"ita","lt":"lit","nl":"nld","pl":"pol","pt":"por","ro":"ron","es":"spa","sv":"swe"}
 
 alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÂÄĂÇÈÉÊËÎÏÒÓÔÖȘȚÙÛÜàâäăçèéêëìîïòóôöșțùûüÿŸ"
+
+# INSTALL(3) : default values
 
 modelName="FILTER2"
 model=modelList[modelName]      # default model
@@ -415,21 +415,21 @@ outputFile="default.out"        # default output file
 try:
     opts, args = getopt.getopt(sys.argv[1:],"hm:t:c:f:g:v:s:",["model=","txt=","ctxtsize=","fltrtresh=","gap=","vote=","subset="])
 except getopt.GetoptError:
-    print ('ldig_insideDoc.py -m modelName -t <text or filename> -c <context size> -f <(global) filter threshold> -g <minimum gap to choose lg> -v <voting method> -s <subset of accepted languages: list separated by a "," whithout spaces>')
-    print ('ldig_insideDoc.py -h for more options')
+    print ('coswid.py -m modelName -t <text or filename> -c <context size> -f <(global) filter threshold> -g <minimum gap to choose lg> -v <voting method> -s <subset of accepted languages: list separated by a "," whithout spaces>')
+    print ('coswid.py -h for more options')
     sys.exit(2)
 
 if len(opts)==0 :
-    print ('ldig_insideDoc.py -m modelName -t <text or filename> -c <context size> -f <(global) filter threshold> -g <minimum gap to choose lg> -v <voting method> -s <subset of accepted languages: list separated by a "," whithout spaces>')
-    print ('ldig_insideDoc.py -h for more options')
+    print ('coswid.py -m modelName -t <text or filename> -c <context size> -f <(global) filter threshold> -g <minimum gap to choose lg> -v <voting method> -s <subset of accepted languages: list separated by a "," whithout spaces>')
+    print ('coswid.py -h for more options')
     sys.exit(2)
 
 
 print("%s"%str(opts))
 for opt, arg in opts:
     if opt == '-h':
-        print ('ldig_insideDoc.py -m <model name> -t <text or filename> -c <context size> -f <(global) filter threshold> -g <minimum gap to choose lg> -v <voting method> -s <subset of accepted languages: list separated by a "," whithout spaces>')
-        print ('OR : ldig_insideDoc.py --model <model name> --txt <text or filename> --ctxtsize <context size> --fltrtresh <(global) filter threshold> --gap <min gap to choose lg> --vote <voting method>  --subset <subset of accepted languages: list separated by a "," whithout spaces>')
+        print ('coswid.py -m <model name> -t <text or filename> -c <context size> -f <(global) filter threshold> -g <minimum gap to choose lg> -v <voting method> -s <subset of accepted languages: list separated by a "," whithout spaces>')
+        print ('OR : coswid.py --model <model name> --txt <text or filename> --ctxtsize <context size> --fltrtresh <(global) filter threshold> --gap <min gap to choose lg> --vote <voting method>  --subset <subset of accepted languages: list separated by a "," whithout spaces>')
         print ('DEFAULT : -c 1 -f 0 -g 0.1 -v dico')
         print ('  Model : %s'%model)
         print ('  Languages : %s'%str(modelLg))
